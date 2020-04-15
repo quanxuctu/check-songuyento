@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(number)
+    {
+        if (number < 2){
+            return false;
+        }else{
+            for (i = 2; i <= Math.sqrt(number); i++)
+            {
+                if (number % i == 0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    function displayPrimeList(quantity){
+        let count=0;
+        let i=2;
+        let sum=0;
+        while(count<quantity){
+            if(isPrime(i)==true){
+                document.write(i+" ");
+                count++;
+                sum=sum+i;
+            }
+            i++;
+        }
+        return sum;
+    }
+    let quantity=prompt("Nhap so luong so nguyen to ban muon hien thi: ");
+    displayPrimeList(quantity);
+</script>
+</body>
+</html>
